@@ -7,11 +7,7 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
@@ -28,14 +24,120 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+# 开启站内搜索功能
+search: true
+# 页面左上角的页面名称
+masthead_title: Perry Chuh
+# 网站或页面的联系邮箱地址
+email: perrychuh@163.com
+# 网站的基本路径，如果网站是直接在域名的根目录下部署的，则留空即可
+baseurl: ""
+# 网站的完整 URL 地址
+url: https://perrychuh.github.io
+# 网站对应的版本控制仓库的信息，包括用户名/组织名和仓库名
+repository: "Perrychuh/PerryChuh.github.io"
+# 网站或页面管理员的 GitHub 账户信息
+# 第一个元素通常是 GitHub 用户名
+github: [Perry]
+# 控制是否显示面包屑导航，设置为 false 表示不显示面包屑导航
+breadcrumbs: true
+# 控制搜索功能是否搜索完整内容，设置为 true 表示搜索引擎会搜索完整内容，而不仅仅是标题或摘要
+search_full_content: true
+
+# Markdown 解析器设置为 kramdown
+markdown: kramdown
+
+# 使用远程主题 mmistakes/minimal-mistakes
+#remote_theme: mmistakes/minimal-mistakes
+
+# 输出设置
+# URL 结构为 /分类名/标题/
+# permalink: /:categories/:title/
+# 每页显示 5 篇文章
+# paginate: 5
+# 分页路径格式为 /page:num/
+# paginate_path: /page:num/
+# 时区设置为亚洲/上海
+# timezone: Asia/Shanghai  # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 
 # Build settings
 theme: minimal-mistakes-jekyll
 minimal_mistakes_jekyll:
   version: 4.24.0
 
+
+author:
+  # name   : "Perry Chuh"
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "An Ordinary Boy" # 网页头像下方的小字
+  location: "Guangdong, China"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:perrychuh@gmail.com" #左侧栏的邮箱链接
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/PerryChuh" #左侧栏的GitHub链接
+
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/PerryChuh" # 页脚的GitHub链接
+
+
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      classes: wide
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      show_date: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+
+
+
+
+
+
+
+
+
+
+
 plugins:
   - jekyll-feed
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /publiations/:title
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
